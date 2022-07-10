@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { getMovie } from './movieSlice'
 
-const MovieSearch = () => {
+export const MovieSearch = () => {
 
   const [movieTitle, setMovieTitle] = useState('')
 
@@ -22,5 +22,3 @@ const MovieSearch = () => {
     </div>
   )
 }
-
-export default MovieSearch
