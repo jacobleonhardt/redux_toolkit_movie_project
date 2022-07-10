@@ -1,0 +1,32 @@
+h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #fff;
+}
+
+label  {
+  display: none;
+}
+
+form {
+  display: grid;
+}
+
+input {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+input:last-child {
+  border: 0px;
+  margin-top: 5%;
+  background-color:rgb(190, 3, 3);
+  color: #fff;
+}
+
+input:last-child:hover {
+  cursor: pointer;
+  transition: .5s;
+  background-color:rgb(129, 3, 3);
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getMovie, addMovieToList } from './movieSlice'
+import styles from './Movies.module.css'
 
 export const MovieSearch = () => {
   const dispatch = useDispatch()
@@ -14,7 +15,7 @@ export const MovieSearch = () => {
   }
 
   return (
-    <div>
+    <div className='movie-search-form'>
       <h1>Movie Search</h1>
       <form onSubmit={onSubmit}>
         <label>Title</label>
