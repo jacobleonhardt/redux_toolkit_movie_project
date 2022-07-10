@@ -5,10 +5,11 @@ import { getMovie } from './movieSlice'
 export const MovieSearch = () => {
 
   const [movieTitle, setMovieTitle] = useState('')
+  const movieTitleString = String(movieTitle) || '';
 
   const onSubmit = (e) => {
     e.preventDefault()
-    getMovie(movieTitle)
+    getMovie(movieTitleString)
   }
 
   return (
