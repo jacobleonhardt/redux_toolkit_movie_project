@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getMovie, addMovieToList } from './movieSlice'
-import styles from './Movies.module.css'
+import './Movies.module.css'
 
 export const MovieSearch = () => {
   const dispatch = useDispatch()
