@@ -1,0 +1,26 @@
+import React from 'react'
+import { useState } from 'react'
+import { getMovie } from './movieSlice'
+
+const MovieSearch = () => {
+
+  const [movieTitle, setMovieTitle] = useState('')
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    getMovie(movieTitle)
+  }
+
+  return (
+    <div>
+      <h1>Movie Search</h1>
+      <form onSubmit={onSubmit}>
+        <label>Title</label>
+        <input type='text' placeholder='Title' onChange={(e) => setMovieTitle(e.target.value)}></input>
+        <button type='submit'>Find Movie</button>
+      </form>
+    </div>
+  )
+}
+
+export default MovieSearch
