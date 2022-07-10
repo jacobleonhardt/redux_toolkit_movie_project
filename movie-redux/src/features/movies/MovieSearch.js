@@ -11,7 +11,11 @@ export const MovieSearch = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    dispatch(getMovie(movieTitle))
+    if (movieTitle.length > 0) {
+      dispatch(getMovie(movieTitle))
+    } else {
+      alert('Uh-oh! Please check for a title.')
+    }
   }
 
   return (
