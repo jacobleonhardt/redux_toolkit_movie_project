@@ -3,7 +3,8 @@ import { apiInfo } from '../../config.js'
 
 const apiKey = apiInfo.SECRET_KEY
 const initialState = {
-  result: null
+  results: [],
+  status: 'idle',
 }
 
 export const getMovie = createAsyncThunk(
@@ -33,13 +34,20 @@ export const getMovie = createAsyncThunk(
 export const moviesSlice = createSlice({
   name: 'movies',
   initialState,
-  reducers: {
-    addMovieToList: (state, action) => {
-      state.movies.result = action.payload
-    }
-  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getMovie.pending, (state) => {
+        state.status = 'loading'
+      })
+      .addCase(getMovie.fulfilled, (state, action) => {
+        state.status = 'idle'
+        console.log('>>>>', action.payload)
+        state.results.push(action.payload)
+      })
+  }
 })
 
-export const selectMovie = (state) => state.movies.result
+export const selectMovie = (state) => state.movies.results
 export const { addMovieToList } = moviesSlice.actions
 export default moviesSlice.reducer

@@ -1,13 +1,15 @@
 import React from 'react'
 import { selectMovie } from './movieSlice'
 import { useSelector } from 'react-redux'
-import styles from './Movies.module.css'
+import './Movies.module.css'
 
 export const MovieDisplay = () => {
 
-  const movie = useSelector(selectMovie)
+  const results = useSelector(selectMovie)
 
   return (
-    <div className='movie-search-results'>{movie}</div>
+    <div className='movie-search-results'>{results.map(result => {
+      return <div key={result.id}>{result.locations}</div>
+    })}</div>
   )
 }
