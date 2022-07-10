@@ -1,15 +1,16 @@
 import React from 'react'
 import { useState } from 'react'
-import { getMovie } from './movieSlice'
+import { useDispatch } from 'react-redux'
+import { getMovie, addMovieToList } from './movieSlice'
 
 export const MovieSearch = () => {
-
+  const dispatch = useDispatch()
   const [movieTitle, setMovieTitle] = useState('')
-  const movieTitleString = String(movieTitle) || '';
+  // const searchableTitle = movieTitle.join('-').toLowerCase()
 
   const onSubmit = (e) => {
     e.preventDefault()
-    getMovie(movieTitleString)
+    dispatch(getMovie(movieTitle))
   }
 
   return (
@@ -18,7 +19,7 @@ export const MovieSearch = () => {
       <form onSubmit={onSubmit}>
         <label>Title</label>
         <input type='text' placeholder='Title' onChange={(e) => setMovieTitle(e.target.value)}></input>
-        <button type='submit'>Find Movie</button>
+        <input type='submit' value='Find Movie'/>
       </form>
     </div>
   )
