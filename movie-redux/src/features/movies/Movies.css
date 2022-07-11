@@ -56,13 +56,9 @@ input:last-child:hover {
 }
 
 .provider-icons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: inline-block
 }
 
 .provider-icons img {
-  padding: 3px;
-  max-width: 100px;
+  margin: 0 3px;
 }
