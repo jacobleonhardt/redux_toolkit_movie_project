@@ -42,7 +42,6 @@ export const moviesSlice = createSlice({
       })
       .addCase(getMovie.fulfilled, (state, action) => {
         state.status = 'idle'
-        console.log('>>>>', action.payload)
         state.results.push(action.payload)
       })
   }

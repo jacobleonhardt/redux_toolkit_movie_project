@@ -1,6 +1,6 @@
 import React from 'react';
 import { MovieSearch } from './features/movies/MovieSearch'
-import { MovieDisplay } from './features/movies/MovieDisplay';
+import { MovieResults } from './features/movies/MovieResults';
 import './App.css';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <MovieSearch />
-        <MovieDisplay />
+        <MovieResults />
       </header>
     </div>
   );
