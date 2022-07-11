@@ -4,7 +4,7 @@ import './Movies.css'
 
 export const MovieDisplay = ({ result }) => {
   return (
-    <div className='list-item'>
+    <div className='list-items'>
       { result.map( item => {
         return item.results.map( provider => <MovieDisplayCard key={provider.id} item={provider} /> )
       })}

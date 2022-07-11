@@ -34,3 +34,20 @@ input:last-child:hover {
 .movie-search-results {
   color: #fff;
 }
+
+.list-items {
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.list-item-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item-card img {
+  width: 300px;
+}
