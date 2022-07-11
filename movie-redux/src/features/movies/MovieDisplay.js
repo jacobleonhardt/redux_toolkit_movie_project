@@ -1,10 +1,12 @@
 import React from 'react'
+import { MovieDisplayCard } from './MovieDisplayCard'
 import './Movies.css'
 
-export const MovieDisplay = (list) => {
+export const MovieDisplay = (result) => {
   return (
-    <div className='list-item'>{list.results.map(item => {
-      return <span>ITEM: {item.provider}</span>
-    })}</div>
+    <div className='list-item'>
+      {result.result.results.map(item => {
+        return <MovieDisplayCard key={item.id} item={item} />
+      })}</div>
   )
 }

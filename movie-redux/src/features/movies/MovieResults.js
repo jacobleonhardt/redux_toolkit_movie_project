@@ -10,9 +10,8 @@ export const MovieResults = () => {
   const emptyList = resultList.length === 0
   return (
     <div className='movie-search-results'>
-      { emptyList ? "Let's find a movie!" : resultList.map(result => {
-        return <MovieDisplay key={0} list={result} />
-      }) }
+      {console.log('>>>>>>', resultList[0])}
+      { emptyList ? "Let's find a movie!" : <MovieDisplay result={resultList[0]} /> }
     </div>
   )
 }
